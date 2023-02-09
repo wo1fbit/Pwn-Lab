@@ -1,2 +1,2 @@
 # Ctf-Challs
-collection of ctf challenges across all categories
+collection of pwn and rev challenges from CTF events.
