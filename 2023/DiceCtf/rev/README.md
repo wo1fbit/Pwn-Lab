@@ -1,7 +1,6 @@
 # DICECTF 2023 Rev Challenges
 
 ## 1. time-travel
----
 Author: infuzion
 
 Description: This flag calculator has been running for a while...
@@ -9,7 +8,6 @@ Description: This flag calculator has been running for a while...
 Solves: 76 solves / 139 points
 
 ## 2.parallelism
----
 Author: infuzion
 
 Description: High performance computing is cool and all, but high performance flag checking is where it's at. Run with `mpirun --oversubscribe -np 8 ./parallelism`
@@ -17,7 +15,6 @@ Description: High performance computing is cool and all, but high performance fl
 Solves: 68 solves / 144 points
 
 ## 3.raspberry
----
 Author: hgarrereyn
 
 Description: ChatGPT is overrated `(Dockerfile is provided just as an example)`
