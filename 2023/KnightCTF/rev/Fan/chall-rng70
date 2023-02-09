@@ -1,0 +1,239 @@
+# Method Name:       <module>
+# Filename:          chall.py
+# Argument count:    0
+# Keyword-only arguments: 0
+# Number of locals:  0
+# Stack size:        5
+# Flags:             0x00000040 (NOFREE)
+# First Line:        1
+  1:           0 LOAD_CONST           (<code object define_false at 0x7fbea9c650c0, file "chall.py", line 1>)
+               2 LOAD_CONST           ('define_false')
+               4 MAKE_FUNCTION        (Neither defaults, keyword-only args, annotations, nor closures)
+               6 STORE_NAME           (define_false)
+
+ 19:           8 LOAD_CONST           (<code object define_true at 0x7fbea9c65540, file "chall.py", line 19>)
+              10 LOAD_CONST           ('define_true')
+              12 MAKE_FUNCTION        (Neither defaults, keyword-only args, annotations, nor closures)
+              14 STORE_NAME           (define_true)
+
+ 25:          16 LOAD_CONST           (<code object define_both at 0x7fbea9699540, file "chall.py", line 25>)
+              18 LOAD_CONST           ('define_both')
+              20 MAKE_FUNCTION        (Neither defaults, keyword-only args, annotations, nor closures)
+              22 STORE_NAME           (define_both)
+
+ 40:          24 LOAD_NAME            (__name__)
+              26 LOAD_CONST           ('__main__')
+              28 COMPARE_OP           (==)
+              30 POP_JUMP_IF_FALSE    (to 66)
+
+ 41:          32 LOAD_CONST           ('chr(75)chr(67)chr(84)chr(70)chr(123)')
+              34 LOAD_CONST           ('chr(115)chr(105)chr(85)chr(85)chr(85)')
+              36 LOAD_CONST           ('chr(109)chr(69)chr(51)chr(115)chr(115)chr(105)')
+              38 LOAD_CONST           ('chr(105)chr(115)')
+              40 LOAD_CONST           ('chr(103)chr(48)chr(79)chr(97)chr(116)chr(125)')
+              42 BUILD_LIST           5
+              44 STORE_NAME           (s)
+
+ 42:          46 LOAD_NAME            (print)
+              48 LOAD_NAME            (define_false)
+              50 LOAD_NAME            (define_true)
+              52 LOAD_NAME            (define_both)
+              54 LOAD_NAME            (s)
+              56 CALL_FUNCTION        (1 positional argument)
+              58 CALL_FUNCTION        (1 positional argument)
+              60 CALL_FUNCTION        (1 positional argument)
+              62 CALL_FUNCTION        (1 positional argument)
+              64 POP_TOP
+         >>   66 LOAD_CONST           (None)
+              68 RETURN_VALUE
+
+
+# Method Name:       define_false
+# Filename:          chall.py
+# Argument count:    1
+# Keyword-only arguments: 0
+# Number of locals:  7
+# Stack size:        4
+# Flags:             0x00000043 (NOFREE | NEWLOCALS | OPTIMIZED)
+# First Line:        1
+  2:           0 BUILD_LIST           0
+               2 STORE_FAST           (lstr)
+
+  3:           4 LOAD_CONST           (0)
+               6 STORE_FAST           (u)
+
+  4:           8 LOAD_CONST           ('')
+              10 STORE_FAST           (packed)
+
+  5:          12 SETUP_LOOP           (to 126)
+              14 LOAD_FAST            (s)
+              16 GET_ITER
+         >>   18 FOR_ITER             (to 124)
+              20 STORE_FAST           (c)
+
+  6:          22 LOAD_FAST            (c)
+              24 LOAD_CONST           ('[')
+              26 COMPARE_OP           (==)
+              28 POP_JUMP_IF_FALSE    (to 54)
+
+  7:          30 LOAD_FAST            (lstr)
+              32 LOAD_ATTR            (append)
+              34 LOAD_FAST            (packed)
+              36 LOAD_FAST            (u)
+              38 BUILD_TUPLE          2
+              40 CALL_FUNCTION        (1 positional argument)
+              42 POP_TOP
+
+  8:          44 LOAD_CONST           ('')
+              46 STORE_FAST           (packed)
+
+  9:          48 LOAD_CONST           (0)
+              50 STORE_FAST           (u)
+              52 JUMP_ABSOLUTE        (to 18)
+
+ 10:     >>   54 LOAD_FAST            (c)
+              56 LOAD_CONST           (']')
+              58 COMPARE_OP           (==)
+              60 POP_JUMP_IF_FALSE    (to 88)
+
+ 11:          62 LOAD_FAST            (lstr)
+              64 LOAD_ATTR            (pop)
+              66 CALL_FUNCTION        (0 positional arguments)
+              68 UNPACK_SEQUENCE      2
+              70 STORE_FAST           (prev_string)
+              72 STORE_FAST           (num)
+
+ 12:          74 LOAD_FAST            (prev_string)
+              76 LOAD_FAST            (num)
+              78 LOAD_FAST            (packed)
+              80 BINARY_MULTIPLY
+              82 BINARY_ADD
+              84 STORE_FAST           (packed)
+              86 JUMP_ABSOLUTE        (to 18)
+
+ 13:     >>   88 LOAD_FAST            (c)
+              90 LOAD_ATTR            (isdigit)
+              92 CALL_FUNCTION        (0 positional arguments)
+              94 POP_JUMP_IF_FALSE    (to 114)
+
+ 14:          96 LOAD_FAST            (u)
+              98 LOAD_CONST           (10)
+             100 BINARY_MULTIPLY
+             102 LOAD_GLOBAL          (int)
+             104 LOAD_FAST            (c)
+             106 CALL_FUNCTION        (1 positional argument)
+             108 BINARY_ADD
+             110 STORE_FAST           (u)
+             112 JUMP_ABSOLUTE        (to 18)
+
+ 16:     >>  114 LOAD_FAST            (packed)
+             116 LOAD_FAST            (c)
+             118 INPLACE_ADD
+             120 STORE_FAST           (packed)
+             122 JUMP_ABSOLUTE        (to 18)
+         >>  124 POP_BLOCK
+
+ 17:     >>  126 LOAD_FAST            (packed)
+             128 RETURN_VALUE
+
+
+# Method Name:       define_true
+# Filename:          chall.py
+# Argument count:    1
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        5
+# Flags:             0x00000043 (NOFREE | NEWLOCALS | OPTIMIZED)
+# First Line:        19
+ 20:           0 LOAD_CONST           ('')
+               2 STORE_FAST           (res)
+
+ 21:           4 SETUP_LOOP           (to 42)
+               6 LOAD_FAST            (p)
+               8 GET_ITER
+         >>   10 FOR_ITER             (to 40)
+              12 STORE_FAST           (packed)
+
+ 22:          14 LOAD_FAST            (res)
+              16 LOAD_GLOBAL          (str)
+              18 LOAD_GLOBAL          (len)
+              20 LOAD_FAST            (packed)
+              22 CALL_FUNCTION        (1 positional argument)
+              24 CALL_FUNCTION        (1 positional argument)
+              26 LOAD_CONST           ('[:]')
+              28 BINARY_ADD
+              30 LOAD_FAST            (packed)
+              32 BINARY_ADD
+              34 INPLACE_ADD
+              36 STORE_FAST           (res)
+              38 JUMP_ABSOLUTE        (to 10)
+         >>   40 POP_BLOCK
+
+ 23:     >>   42 LOAD_FAST            (res)
+              44 RETURN_VALUE
+
+
+# Method Name:       define_both
+# Filename:          chall.py
+# Argument count:    1
+# Keyword-only arguments: 0
+# Number of locals:  6
+# Stack size:        5
+# Flags:             0x00000043 (NOFREE | NEWLOCALS | OPTIMIZED)
+# First Line:        25
+ 26:           0 BUILD_LIST           0
+               2 STORE_FAST           (unpacked)
+
+ 27:           4 SETUP_LOOP           (to 86)
+               6 LOAD_FAST            (p)
+               8 GET_ITER
+         >>   10 FOR_ITER             (to 84)
+              12 STORE_FAST           (i)
+
+ 28:          14 LOAD_FAST            (i)
+              16 LOAD_ATTR            (split)
+              18 LOAD_CONST           (')')
+              20 CALL_FUNCTION        (1 positional argument)
+              22 STORE_FAST           (packed)
+
+ 29:          24 LOAD_CONST           ('')
+              26 STORE_FAST           (char)
+
+ 30:          28 SETUP_LOOP           (to 72)
+              30 LOAD_FAST            (packed)
+              32 GET_ITER
+         >>   34 FOR_ITER             (to 70)
+              36 STORE_FAST           (j)
+
+ 31:          38 LOAD_FAST            (j)
+              40 LOAD_CONST           ('')
+              42 COMPARE_OP           (==)
+              44 POP_JUMP_IF_FALSE    (to 48)
+
+ 32:          46 BREAK_LOOP
+
+ 33:     >>   48 LOAD_FAST            (j)
+              50 LOAD_CONST           (')')
+              52 INPLACE_ADD
+              54 STORE_FAST           (j)
+
+ 35:          56 LOAD_FAST            (char)
+              58 LOAD_GLOBAL          (eval)
+              60 LOAD_FAST            (j)
+              62 CALL_FUNCTION        (1 positional argument)
+              64 INPLACE_ADD
+              66 STORE_FAST           (char)
+              68 JUMP_ABSOLUTE        (to 34)
+         >>   70 POP_BLOCK
+
+ 36:     >>   72 LOAD_FAST            (unpacked)
+              74 LOAD_ATTR            (append)
+              76 LOAD_FAST            (char)
+              78 CALL_FUNCTION        (1 positional argument)
+              80 POP_TOP
+              82 JUMP_ABSOLUTE        (to 10)
+         >>   84 POP_BLOCK
+
+ 37:     >>   86 LOAD_FAST            (unpacked)
+              88 RETURN_VALUE
+
